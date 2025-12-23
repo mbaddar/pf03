@@ -1265,7 +1265,7 @@ One helper keeps the team consistent.
 ## Solution — `src/bootcamp_data/joins.py` {.smaller}
 
 ```python
-from **future** import annotations
+from __future__ import annotations
 import pandas as pd
 
 def safe_left_join(
