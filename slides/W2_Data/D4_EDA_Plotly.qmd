@@ -707,7 +707,8 @@ trend = (
       .sort_values("month")
 )
 
-fig = px.line(trend, x="month", y="revenue", title="Revenue over time (by month)")
+fig = px.line(trend, x="month", y="revenue", 
+              title="Revenue over time (by month)")
 fig.update_layout(title={"x": 0.02})
 fig.update_xaxes(title_text="Month")
 fig.update_yaxes(title_text="Revenue")
@@ -954,6 +955,16 @@ Bootstrap can mislead if:
 
 ---
 
+## Comparing Confidence Intervals is "Weak"
+
+A common mistake students make is to calculate a 95% CI for Country A and a 95% CI for Country B and see if they **overlap**.
+
+* **The Overlap Rule**: If they don't overlap, they are definitely different.
+
+* **The Problem**: If they do overlap, they might still be different.
+
+---
+
 ## Example: bootstrap difference in means/rates
 
 ```python
@@ -973,14 +984,24 @@ def bootstrap_diff_means(
 
     For rates, pass a 0/1 Series (e.g., `is_refund.astype(int)`).
     """
-    rng = np.random.default_rng(seed)
+    #Code continued on next slide
+  ```
+
+  ---
+
+## Example: bootstrap difference in means/rates
+
+  ```python
+    rng = np.random.default_rng(seed) #Random number generator
     a = pd.to_numeric(a, errors="coerce").dropna().to_numpy()
     b = pd.to_numeric(b, errors="coerce").dropna().to_numpy()
     assert len(a) > 0 and len(b) > 0, "Empty group after cleaning"
 
     diffs = []
     for _ in range(n_boot):
-        sa = rng.choice(a, size=len(a), replace=True)
+        # Pick a random sample from the array `a` with replacement 
+        # The sample size is the full list
+        sa = rng.choice(a, size=len(a), replace=True) 
         sb = rng.choice(b, size=len(b), replace=True)
         diffs.append(sa.mean() - sb.mean())
     diffs = np.array(diffs)
@@ -1015,6 +1036,10 @@ Examples:
 * paid vs refund (mean amount)
 
 Best choice depends on having enough rows in each group.
+
+::: callout-tip
+If you only look at one country, you have a description. If you compare two countries, you have an experiment.
+:::
 
 ---
 
@@ -1083,7 +1108,7 @@ If CI is:
 Always include:
 
 * absolute diff
-* relative diff (optional)
+* relative diff (Such as a ratio) (Optional)
 * sample sizes (n) 
 
 ---
