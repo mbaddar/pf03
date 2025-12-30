@@ -12,7 +12,14 @@ format: html
 
 ## Week 2: Data Work (ETL + EDA)
 ##### [1. Foundations for an Offline‑First Data Workflow](W2_Data/D1_Data_Workflow.qmd)
-##### [2. Data Quality + Cleaning Basics](W2_Data/D2_Quality_Cleaning.qmd)
-##### [3. Datetimes + Outliers + Safe Joins](W2_Data/D3_Datetimes_Outliers.qmd)
-##### [4. Practical EDA + Plotly + Bootstrap Uncertainty](W2_Data/D4_EDA_Plotly.qmd)
-##### [5. Ship the Pipeline + Reporting Handoff](W2_Data/D5_Pipeline_Handoff.qmd)
+##### [2. Verify + Clean + Join (first real EDA)](W2_Data/D2_Data_Integrity.qmd)
+##### [3. Transform → Feature Table → EDA Tables (Tidy data + time + outliers)](W2_Data/D3_Feature_Engineering.qmd)
+##### [4. EDA with Plotly — Chart Choice + Uncertainty](W2_Data/D4_Visual_Analysis.qmd)
+##### [5. Ship a trustworthy data product (rebuild + metadata + SQL lens)](W2_Data/D5_Data_Product.qmd)
+
+## Week 3: Machine Learning
+##### [1. ML in one picture + your dataset contract](W3_ML/D1.qmd)
+##### [2. Split + baseline + train](W3_ML/D2.qmd)
+##### [3. Evaluate + artifacts](W3_ML/D3.qmd)
+##### [4. Predict CLI + inference contracts](W3_ML/D4.qmd)
+##### [5. Write-up + submit](W3_ML/D5.qmd)
