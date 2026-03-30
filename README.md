@@ -4,6 +4,7 @@ Welcome to the **AI Pros Bootcamp** repository by SDAIA Academy.
 
 This repo contains all instructional materials, exercises, and projects for the bootcamp. The curriculum is designed to take learners from **Python and data foundations** through **professional AI and machine learning workflows**, with an emphasis on real-world practices, reproducibility, and clear thinking.
 
+March 2026
 ---
 
 ## 📚 Repository Structure
